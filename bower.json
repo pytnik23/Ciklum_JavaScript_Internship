@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "homepage": "https://github.com/pytnik23/pytnik23.github.io",
+  "authors": [
+    "Oleksii Teplenko <pytnik.tov@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}
