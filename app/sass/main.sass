@@ -1,2 +1,121 @@
+$primary-text-color: #2f2f2f
+$primary-hover-color: #f2f2f2
+$secondary-hover-color: #e5e5e5
+$thirdly-hover-color: #d9d9d9
+%a-hover
+	&:hover, &:focus
+		background-color: $primary-hover-color
+		color: $primary-text-color
+		text-decoration: none
+%a-trans
+	transition: background-color ease-out .5s
+	transition-property: background-color
+    transition-duration: 0.5s
+	transition-timing-function: ease-out
+	transition-delay: initial
+			
+
 body
-	background-color: green
+	color: $primary-text-color
+	background-color: #eee
+	font-family: 'Open Sans', sans-serif
+	font-size: 15px
+
+header
+	background-color: #fff
+	.logo
+		float: left
+		margin-top: 13px
+	.left-menu
+		float: left
+		padding-left: 20px
+		margin: 0
+		a
+			padding: 0 1.5em
+			float: left
+			@extend %a-hover
+			@extend %a-trans
+		> li
+			position: relative
+			list-style-type: none
+			float: left
+		i
+			font-size: 12px
+
+	.right-menu
+		a
+			float: right
+			padding: 
+				left: 10px
+				right: 10px
+			@extend %a-hover
+			font-size: 12px
+			i
+				vertical-align: middle
+				font-size: 20px
+		.sign-in
+			&:hover
+				color: #6eafe3
+
+		.search-wrap
+			border: 1px solid #a9a9a9
+			float: right
+			margin: 
+				top: 8px
+				right: 20px
+			input
+				width: 220px
+				padding-left: 15px
+				border: none
+				line-height: 30px
+				&:focus
+					outline: 0
+				&::placeholder
+					color: $primary-text-color
+
+			button
+				border: none
+				background: none
+	a
+		line-height: 48px
+		display: inline-block
+		color: $primary-text-color
+
+		img
+			float: left
+			height: 100%
+			max-height: 23px
+
+// dropdown-menu
+.dropdown-menu
+	display: none
+	position: absolute
+	top: 48px
+	left: 0
+	padding-left: 0
+	width: 239px
+	background-color: $primary-hover-color
+	// display: none
+	li
+		display: block
+		float: none
+		a
+			position: relative
+			display: block
+			float: none
+			&:hover
+				background-color: $secondary-hover-color
+			@extend %a-trans
+			i
+				position: absolute
+				right: 20px
+				top: 18px
+
+	.second-dropdown-menu
+		display: none
+		position: absolute
+		left: 239px
+		top: 0
+		padding-left: 0
+		width: 299px
+		background-color: $secondary-hover-color

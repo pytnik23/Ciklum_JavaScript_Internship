@@ -8,7 +8,7 @@ var gulp 		 = require('gulp'),
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
-		.pipe(sass())
+		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('app/css/'))
 		.pipe(browserSync.reload({stream: true}));
@@ -51,7 +51,7 @@ gulp.task('build', ['clean', 'sass', 'imageMin'], function() {
 		.pipe(gulp.dest('dist'));	
 });
 
-gulp.task('watch', ['browser-sync', 'sass'], function() {
+gulp.task('default', ['browser-sync', 'sass'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);

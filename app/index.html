@@ -2,15 +2,122 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Document</title>
-	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+	
+	<link rel="stylesheet" href="css/bootstrap_norm_grid.min.css">
 	<link rel="stylesheet" href="css/main.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700' rel='stylesheet' type='text/css'>
+
+	<script src="https://use.fontawesome.com/a346b2cdfd.js"></script>
 </head>
 <body>
-	<h1>Main header</h1>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, repellendus. Optio, at, perspiciatis! Esse autem sit velit quia, molestiae maiores dolore natus delectus culpa debitis. Reiciendis nisi minima voluptatum!
+	<header class="clearfix">
+		<div class="container">
+			<a href="#" class="logo"><img src="images/microsoft.png" alt="logo" class="img-responsive"></a>
+			<ul class="left-menu">
+				<li>
+					<a href="#">Store <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">
+							<li><a href="#">Store home</a></li>
+							<li>
+								<a href="#">Devises
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">Microsoft surface</a></li>
+									<li><a href="#">PCs & tablets</a></li>
+									<li><a href="#">Xbox</a></li>
+									<li><a href="#">Virtual reality</a></li>
+									<li><a href="#">Accessories</a></li>
+									<li><a href="#">Windows phone</a></li>
+									<li><a href="#">Microsoft Band</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Software
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">Office</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Additional software</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Apps
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">All apps</a></li>
+									<li><a href="#">Windows apps</a></li>
+									<li><a href="#">Windows phone apps</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Games
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">Xbox One games</a></li>
+									<li><a href="#">Xbox 360 games</a></li>
+									<li><a href="#">PC games</a></li>
+									<li><a href="#">Windows games</a></li>
+									<li><a href="#">Windows phone games</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Entertainment
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">All Entertainment</a></li>
+									<li><a href="#">Movies & TV</a></li>
+									<li><a href="#">Music</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Business & Education
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">Business Store</a></li>
+									<li><a href="#">Education Store</a></li>
+									<li><a href="#">Developer</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Sale
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</a>
+								<ul class="second-dropdown-menu">
+									<li><a href="#">Back-to-school essentials</a></li>
+									<li><a href="#">Sale</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Find a store</a></li>
+							<li><a href="#">Gift cards</a></li>
+						</ul>	
+				</li>
+				<li><a href="#">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+				<li><a href="#">Support</a></li>
+			</ul>
+			<div class="right-menu pull-right">
+				<a href="#" class="sign-in">Sign in</a>
+				<a href="#" class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 0</a>
+				<div class="search-wrap">
+					<form action="#">
+						<label for="search" class="sr-only">Search Microsoft</label>
+						<input type="search" id="search" placeholder="Search Microsoft.com" maxlength="100">
+						<button title="Search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
 
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>
