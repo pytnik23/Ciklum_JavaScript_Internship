@@ -41,6 +41,12 @@ header
 			float: left
 		i
 			font-size: 12px
+		// li
+		// 	> ul.fallback
+		// 		display: none
+		// 	&:hover
+		// 		> ul.fallback
+		// 			display: block
 
 	.right-menu
 		a
@@ -92,10 +98,11 @@ header
 	position: absolute
 	top: 48px
 	left: 0
+	z-index: 2
 	padding-left: 0
 	width: 239px
 	background-color: $primary-hover-color
-	// display: none
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,.1)
 	li
 		display: block
 		float: none
@@ -119,3 +126,140 @@ header
 		padding-left: 0
 		width: 299px
 		background-color: $secondary-hover-color
+		box-shadow: 1px 1px 3px -1px rgba(0,0,0,.1)
+		a 
+			&:hover
+				background-color: $thirdly-hover-color
+
+// dropbox section
+$dropbox-text-color: #47525d
+$dropbox-color: #007EE5
+.dropbox
+	background-color: rgb(238, 238, 238);
+	.hero-bg
+		position: absolute
+		left: 50%
+		top: 0
+		background-image: url("../images/dropbox_hero_unit.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+	height: 700px
+	width: 100%
+	
+	
+	.hero-text-wrap
+		margin-top: 150px
+		width: 445px
+		color: $dropbox-text-color
+		
+		h1
+			font-size: 45px
+			font-weight: lighter
+		h2
+			font-size: 20px
+			font-weight: lighter
+		.btn-primary
+			display: inline-block
+			margin: 
+				top: 30px
+				bottom: 15px
+			padding: 14px 30px
+			border-radius: 5px
+			font-size: 20px
+			font-weight: lighter
+			color: #fff
+			background-color: $dropbox-color
+			&:hover
+				text-decoration: none
+				background-color: #3398EA
+		span
+			display: block
+			a 
+				text-decoration: underline
+				&:hover
+					color: #3C9CEB
+
+// Invision section
+$invision-bg-color: #323A45
+.invision
+	background-color: $invision-bg-color
+	text-align: center
+	color: #fff
+
+	h2
+		font-size: 26px
+		font-weight: lighter
+	form
+		color: #000
+		.input
+			position: relative
+			border-radius: 2px
+			background-color: #FFF
+			i
+				position: absolute
+				left: 15px
+				top: 15px
+				color: #ccc
+				font-size: 20px
+		input
+			//width: 100%
+			height: 50px
+			border: none
+			padding:
+				left: 10px
+				right: 10px
+			outline: none
+		button
+			width: 100%
+			height: 50px
+			border: none
+			border-radius: 5px
+			outline: none
+			background-color: #f36
+			color: #fff
+			text-transform: uppercase
+			font-size: 11px
+	p
+		font-size: 12px
+		color: #777
+
+// apple footer
+footer.apple
+	.footer-column
+		float: left
+		width: 20%
+
+		font-size: 12px
+		
+		ul
+			padding-left: 0
+			li
+				list-style-type: none
+				line-height: 1.8em
+				&:first-child
+					font-weight: bold
+				a
+					color: #666
+					&:hover, &:focus
+						color: #333
+	p, span
+		font-size: 12px
+	p
+		border-bottom: 1px solid #ccc
+	.inline-nav
+		display: inline-block
+		padding-left: 20px
+		font-size: 12px
+		li 
+			padding: 
+				left: 15px
+				right: 15px
+			list-style-type: none
+			display: inline-block
+			border-left: 1px solid #ccc
+			&:first-child
+				border: none
+			a
+				color: #666
+				&:hover, &:focus
+					color: #333
