@@ -92,51 +92,54 @@ header
 			height: 100%
 			max-height: 23px
 
-// dropdown-menu
-.dropdown-menu
-	display: none
-	position: absolute
-	top: 48px
-	left: 0
-	z-index: 2
-	padding-left: 0
-	width: 239px
-	background-color: $primary-hover-color
-	box-shadow: -1px 1px 3px -1px rgba(0,0,0,.1)
-	li
-		display: block
-		float: none
-		a
-			position: relative
-			display: block
-			float: none
-			&:hover
-				background-color: $secondary-hover-color
-			@extend %a-trans
-			i
-				position: absolute
-				right: 20px
-				top: 18px
-
-	.second-dropdown-menu
+	// dropdown-menu
+	.dropdown-menu
 		display: none
 		position: absolute
-		left: 239px
-		top: 0
+		top: 48px
+		left: 0
+		z-index: 2
 		padding-left: 0
-		width: 299px
-		background-color: $secondary-hover-color
-		box-shadow: 1px 1px 3px -1px rgba(0,0,0,.1)
-		a 
-			&:hover
-				background-color: $thirdly-hover-color
+		width: 239px
+		background-color: $primary-hover-color
+		box-shadow: -1px 1px 3px -1px rgba(0,0,0,.1)
+		li
+			display: block
+			float: none
+			a
+				position: relative
+				display: block
+				float: none
+				&:hover
+					background-color: $secondary-hover-color
+				@extend %a-trans
+				i
+					position: absolute
+					right: 20px
+					top: 18px
+
+		.second-dropdown-menu
+			display: none
+			position: absolute
+			left: 239px
+			top: 0
+			padding-left: 0
+			width: 299px
+			background-color: $secondary-hover-color
+			box-shadow: 1px 1px 3px -1px rgba(0,0,0,.1)
+			a 
+				&:hover
+					background-color: $thirdly-hover-color
 
 // dropbox section
 $dropbox-text-color: #47525d
 $dropbox-color: #007EE5
 .dropbox
+	position: relative
 	background-color: rgb(238, 238, 238);
 	.hero-bg
+		width: 100%
+		height: 100%
 		position: absolute
 		left: 50%
 		top: 0
@@ -187,10 +190,17 @@ $invision-bg-color: #323A45
 	color: #fff
 
 	h2
-		font-size: 26px
+		margin: 
+			top: 150px
+			bottom: 50px
+		font-size: 29px
 		font-weight: lighter
 	form
 		color: #000
+		.col-md-3
+			margin: 
+				top: 10px
+				bottom: 10px
 		.input
 			position: relative
 			border-radius: 2px
@@ -198,20 +208,17 @@ $invision-bg-color: #323A45
 			i
 				position: absolute
 				left: 15px
-				top: 15px
+				top: 20px
 				color: #ccc
 				font-size: 20px
 		input
-			//width: 100%
-			height: 50px
+			height: 60px
 			border: none
-			padding:
-				left: 10px
-				right: 10px
+			margin-left: 40px
 			outline: none
 		button
 			width: 100%
-			height: 50px
+			height: 60px
 			border: none
 			border-radius: 5px
 			outline: none
@@ -220,8 +227,63 @@ $invision-bg-color: #323A45
 			text-transform: uppercase
 			font-size: 11px
 	p
+		margin: 
+			top: 30px
+			bottom: 150px
 		font-size: 12px
 		color: #777
+		a 
+			text-decoration: underline
+			color: #777
+			&:hover
+				color: #fff
+
+// Oculus section
+.oculus
+	width: 100%
+	.col-4
+		width: 100/3 + %
+		height: 300px
+		float: left
+		.col-bg
+			width: 100%
+			height: 100%
+			&.bg1
+				background-image: url("../images/oculus-bg-img1.jpg")
+			&.bg2
+				background-image: url("../images/oculus-bg-img2.jpg")
+			&.bg3
+				background-image: url("../images/oculus-bg-img3.jpg")
+
+			background-size: cover
+			background-repeat: no-repeat
+
+			.inner
+				position: relative
+				width: 100%
+				height: 100%
+				background-color: rgba(0,0,0,.5)
+				
+				.text
+					position: absolute
+					padding: 
+						right: 20px
+						left: 20px
+					top: 50%
+					transform: translate(0, -50%)
+					width: 100%
+					color: #fff
+					text-align: center
+
+					h4
+						margin: 0
+						font-weight: lighter
+						font-size: 12px
+						letter-spacing: 2px
+						color: #a4a5a6
+					h3
+						margin: 0
+						font-weight: lighter
 
 // apple footer
 footer.apple
@@ -263,3 +325,10 @@ footer.apple
 				color: #666
 				&:hover, &:focus
 					color: #333
+
+
+// @media (min-width: 768px) {}
+
+// @media (min-width: 992px) {}
+
+// @media (min-width: 1200px) {}
