@@ -23,13 +23,13 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('imageMin', function() {
-	gulp.src('app/img/**/*')
+	gulp.src('app/images/**/*')
 		.pipe(cache(imagemin({
 			interlaced: true,
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}]
 		})))
-		.pipe(gulp.dest('dist/images'))
+		.pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('clear', function() {
@@ -41,7 +41,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', ['clean', 'sass', 'imageMin'], function() {
-	gulp.src('app/css/main.css')
+	gulp.src('app/css/*.css')
 		.pipe(gulp.dest('dist/css'));
 	gulp.src('app/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
