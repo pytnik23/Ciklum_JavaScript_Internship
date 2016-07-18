@@ -24,7 +24,7 @@ gulp.task('bower', function () {
 gulp.task('css', function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-		.pipe(autoprefixer())
+		.pipe(autoprefixer({ browsers: ['last 15 versions']}))
 		.pipe(gulp.dest('app/css/'))
 		.pipe(browserSync.reload({stream: true}));
 });
