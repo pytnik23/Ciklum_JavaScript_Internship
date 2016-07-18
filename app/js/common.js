@@ -31,6 +31,8 @@ $(function() {
 			dropdownMenu = $(this).closest('.dropdown-menu');
 		  	subMenu = $(this).find('.second-dropdown-menu');
 			
+			dropdownMenu.css('height', '');
+			subMenu.css('height', '');
 		  	
 
 		  	var x = dropdownMenu.height(),
@@ -46,8 +48,6 @@ $(function() {
 		},
 		function () {
 			$('ul', this).hide();
-			dropdownMenu.css('height', '');
-			subMenu.css('height', '');
 		}
 	);
 
