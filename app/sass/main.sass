@@ -36,7 +36,6 @@ header
 		margin: 0
 		a
 			padding: 0 1.5em
-			float: left
 			@extend %a-hover
 			@extend %a-trans
 		> li
@@ -158,7 +157,7 @@ $dropbox-color: #007EE5
 		color: $dropbox-text-color
 		
 		h1
-			font-size: 45px
+			font-size: 40px
 			font-weight: lighter
 		h2
 			font-size: 20px
@@ -361,12 +360,66 @@ footer.apple
 
 
 @media (max-width: 480px)
+	.dropbox
+		.hero-text-wrap
+			margin: 0 auto
+			text-align: center
 	.oculus
 		.col-4
 			width: 100% !important
 
-// @media (min-width: 768px)
+@media (max-width: 767px)
+	header
+		.left-menu
+			position: absolute
+			right: 0
+			top: 48px
+			z-index: 2
+			width: 300px
+			padding-left: 0
+			background-color: $primary-hover-color
+			> li
+				display: block
+				float: none
+				a
+					position: relative
+					display: block
+					transition: background-color ease-out .5s
+					transition-property: background-color
+					transition-duration: 0.5s
+					transition-timing-function: ease-out
+					transition-delay: initial
+					i
+						position: absolute
+						right: 20px
+						top: 18px
+				&:hover
+					a
+						background-color: $secondary-hover-color
+						
+	.dropbox
+		height: 500px
+		.hero-text-wrap
+			width: 370px
+			margin-top: 70px
+			h1
+				font-size: 30px
+			h2
+				font-size: 18px
+		.hero-bg
+			left: 0
+			margin-left: 500px
+
+@media (min-width: 768px)
+	.dropbox
+		.hero-bg
+			left: 0
+			margin-left: 550px
 
 // @media (min-width: 992px)
 
-// @media (min-width: 1200px)
+@media (min-width: 1200px)
+	.dropbox
+		.hero-text-wrap
+			h1
+				font-size: 45px

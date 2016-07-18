@@ -1114,7 +1114,6 @@ header .left-menu {
 
 header .left-menu a {
   padding: 0 1.5em;
-  float: left;
 }
 
 header .left-menu > li {
@@ -1270,7 +1269,7 @@ header .dropdown-menu .second-dropdown-menu a:hover {
 }
 
 .dropbox .hero-text-wrap h1 {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: lighter;
 }
 
@@ -1549,7 +1548,79 @@ footer.apple .copyright-div a.us:hover, footer.apple .copyright-div a.us:focus {
 }
 
 @media (max-width: 480px) {
+  .dropbox .hero-text-wrap {
+    margin: 0 auto;
+    text-align: center;
+  }
   .oculus .col-4 {
     width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header .left-menu {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    z-index: 2;
+    width: 300px;
+    padding-left: 0;
+    background-color: #f2f2f2;
+  }
+  header .left-menu > li {
+    display: block;
+    float: none;
+  }
+  header .left-menu > li a {
+    position: relative;
+    display: block;
+    -webkit-transition: background-color ease-out .5s;
+    transition: background-color ease-out .5s;
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+    -webkit-transition-delay: initial;
+            transition-delay: initial;
+  }
+  header .left-menu > li a i {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+  }
+  header .left-menu > li:hover a {
+    background-color: #e5e5e5;
+  }
+  .dropbox {
+    height: 500px;
+  }
+  .dropbox .hero-text-wrap {
+    width: 370px;
+    margin-top: 70px;
+  }
+  .dropbox .hero-text-wrap h1 {
+    font-size: 30px;
+  }
+  .dropbox .hero-text-wrap h2 {
+    font-size: 18px;
+  }
+  .dropbox .hero-bg {
+    left: 0;
+    margin-left: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dropbox .hero-bg {
+    left: 0;
+    margin-left: 550px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dropbox .hero-text-wrap h1 {
+    font-size: 45px;
   }
 }
