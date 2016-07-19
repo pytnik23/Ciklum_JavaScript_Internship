@@ -104,7 +104,7 @@ $(function() {
 
 	var regName 		= /^[a-z0-9_-]{3,16}$/,
 		regEmail 		= /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/,
-		regPassword 	= /^[a-z0-9_-]{6,18}$/;
+		regPassword 	= /^[a-zA-Z0-9_-]{6,18}$/;
 
 
 	form.submit(function(e) {
