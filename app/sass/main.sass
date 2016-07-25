@@ -17,15 +17,17 @@ $thirdly-hover-color: #d9d9d9
 	transition-delay: initial
 .hidden
 	display: none
-			
-
+html
+	min-width: 400px
 body
 	color: $primary-text-color
 	background-color: #eee
 	font-family: 'Open Sans', sans-serif
 	font-size: 15px
+	min-width: 400px
 
 header
+	position: relative
 	background-color: #fff
 	.logo
 		float: left
@@ -60,27 +62,30 @@ header
 		.sign-in
 			&:hover
 				color: #6eafe3
-
 		.search-wrap
-			border: 1px solid #a9a9a9
-			float: right
-			margin: 
-				top: 8px
-				right: 20px
-			input
-				width: 220px
-				padding-left: 15px
-				border: none
-				line-height: 30px
-				&:focus
-					outline: 0
-				&::placeholder
-					color: $primary-text-color
-
-			button
-				color: #7f7f7f
-				border: none
-				background: none
+			display: inline-block
+			.search-inner
+				display: inline-block
+				border: 1px solid #a9a9a9
+				float: right
+				margin: 
+					top: 8px
+					right: 20px
+				background-color: #FFF
+				input
+					width: 220px
+					padding-left: 15px
+					border: none
+					line-height: 30px
+					&:focus
+						outline: 0
+					&::placeholder
+						color: $primary-text-color
+				button
+					color: #7f7f7f
+					border: none
+					background: none
+					padding: 6px 10px
 	a
 		line-height: 48px
 		display: inline-block
@@ -358,68 +363,3 @@ footer.apple
 			&:hover, &:focus
 					color: #333
 
-
-@media (max-width: 480px)
-	.dropbox
-		.hero-text-wrap
-			margin: 0 auto
-			text-align: center
-	.oculus
-		.col-4
-			width: 100% !important
-
-@media (max-width: 767px)
-	header
-		.left-menu
-			position: absolute
-			right: 0
-			top: 48px
-			z-index: 2
-			width: 300px
-			padding-left: 0
-			background-color: $primary-hover-color
-			> li
-				display: block
-				float: none
-				a
-					position: relative
-					display: block
-					transition: background-color ease-out .5s
-					transition-property: background-color
-					transition-duration: 0.5s
-					transition-timing-function: ease-out
-					transition-delay: initial
-					i
-						position: absolute
-						right: 20px
-						top: 18px
-				&:hover
-					a
-						background-color: $secondary-hover-color
-
-	.dropbox
-		height: 500px
-		.hero-text-wrap
-			width: 370px
-			margin-top: 70px
-			h1
-				font-size: 30px
-			h2
-				font-size: 18px
-		.hero-bg
-			left: 0
-			margin-left: 500px
-
-@media (min-width: 768px)
-	.dropbox
-		.hero-bg
-			left: 0
-			margin-left: 550px
-
-//@media (min-width: 992px)
-
-@media (min-width: 1200px)
-	.dropbox
-		.hero-text-wrap
-			h1
-				font-size: 45px
