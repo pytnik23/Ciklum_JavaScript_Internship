@@ -1,4 +1,4 @@
-# Project for Cilkum JavaScript Internship
+# Project for Ciklum JavaScript Internship
 
 ### Задание: Вам необходимо создать страницу с частей (секции с уже существующих веб-страниц):
 - Microsoft: используйте навигационную панель

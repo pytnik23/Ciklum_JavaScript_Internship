@@ -1,4 +1,5 @@
 $(function() {
+	
 	//dropdown menu
 	var menu = $('.left-menu');
 
@@ -14,7 +15,7 @@ $(function() {
 		if (!target.nextElementSibling) return;
 		var dropdown = target.nextElementSibling;
 		
-		$(target).focusout(function() {
+		$(target).blur(function() {
 			if (width > 768) {
 				$(dropdown).slideUp('fast');
 			}
@@ -26,42 +27,33 @@ $(function() {
 	//second dropdown menu hover & size
 	var dropdownMenu,
 		subMenu,
-		menuItems = menu.find('li ul li');
+		menuItems = $('.left-menu > li > ul > li');
 
-	if (width > 768) {
-		menuItems.hover(
-			function () {
+	menuItems.hover(
+		function () {
+			//menuItems.find('i').removeClass('fa-angle-down').addClass('fa-angle-right');
 
-				dropdownMenu = $(this).closest('.dropdown-menu');
-			  	subMenu = $(this).find('.second-dropdown-menu');
-				
-				dropdownMenu.css('height', '');
-				subMenu.css('height', '');
-			  	
+			dropdownMenu = $(this).closest('.dropdown-menu');
+		  	subMenu = $(this).find('.second-dropdown-menu');
+			
+			dropdownMenu.css('height', '');
+			subMenu.css('height', '');
 
-			  	var x = dropdownMenu.height(),
-					y = subMenu.height(),
-					menuHeight = Math.max(x, y);
+		  	var x = dropdownMenu.height(),
+				y = subMenu.height(),
+				menuHeight = Math.max(x, y);
 
-				if (!menuHeight) return;
+			if (!menuHeight) return;
 
-				dropdownMenu.height(menuHeight);
-				subMenu.height(menuHeight);
+			dropdownMenu.height(menuHeight);
+			subMenu.height(menuHeight);
 
-				$('ul', this).show();
-			},
-			function () {
-				$('ul', this).hide();
-			}
-		);
-	} else {
-		menuItems.find('i').removeClass('fa-angle-right').addClass('fa-angle-down')
-		menuItems.click(
-			function() {
-				$(this).find('.second-dropdown-menu').slideDown();
-			}
-		);
-	}
+			$('ul', this).show();
+		},
+		function () {
+			$('ul', this).hide();
+		}
+	);
 
 	// hide & show
 	var searchButton = $('.search-button'),
@@ -70,7 +62,6 @@ $(function() {
 		leftMenu = $('.left-menu');
 
 	function searchHiddenToogle(width) {
-		
 		if (width < 992) {
 			searchButton.removeClass('hidden');
 			searchWrap.css('display', 'none');
@@ -92,20 +83,20 @@ $(function() {
 	searchButton.click(function(e) {
 		e.preventDefault();
 		if (searchWrap.css('display') === 'none') {
+			searchButton.css('background-color', '#f2f2f2')
 			searchWrap.css('display', 'inline-block');
+			$('#search').focus();
 		} else {
 			searchWrap.css('display', 'none');
+			searchButton.css('background-color', '')
 		}
-	});
-	searchButton.blur(function() {
-		searchWrap.css('display', 'none');
 	});
 
 	searchHiddenToogle(document.documentElement.clientWidth);
-	var width;
+	var width = document.documentElement.clientWidth;
 	$(window).resize(function() {
 		width = document.documentElement.clientWidth;
-		searchHiddenToogle(document.documentElement.clientWidth);
+		searchHiddenToogle(width);
 	});
 
 	menuButton.click(function(e) {
