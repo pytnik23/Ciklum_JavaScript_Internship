@@ -52,15 +52,10 @@ $thirdly-hover-color: #d9d9d9
 					position: relative
 					top: 0
 					left: 0
-
-
-
-
 		.right-menu
 			a 
 				&:focus
 					background: none
-
 	.dropbox
 		height: 500px
 		.hero-text-wrap
@@ -73,6 +68,32 @@ $thirdly-hover-color: #d9d9d9
 		.hero-bg
 			left: 0
 			margin-left: 500px
+	footer.apple
+		.copyright-div
+			a.us
+				float: none
+				display: block
+		.footer-column
+			float: none
+			width: 100%
+			ul
+				display: none
+				li
+					a
+						display: block
+						padding: 0 10px
+			.footer-column-section
+				border-bottom: 1px solid #e3e3e3
+				h3
+					cursor: pointer
+					font-size: 14px
+					font-weight: 300
+					line-height: 2.8
+					&:after
+						content: '+'
+						float: right
+						margin-right: 8px
+						transition: transform .3s ease
 // @media (min-width: 769px) and (max-width: 992px)
 @media (min-width: 769px)
 	.dropbox

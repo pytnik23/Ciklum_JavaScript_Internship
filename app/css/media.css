@@ -77,6 +77,39 @@
     left: 0;
     margin-left: 500px;
   }
+  footer.apple .copyright-div a.us {
+    float: none;
+    display: block;
+  }
+  footer.apple .footer-column {
+    float: none;
+    width: 100%;
+  }
+  footer.apple .footer-column ul {
+    display: none;
+  }
+  footer.apple .footer-column ul li a {
+    display: block;
+    padding: 0 10px;
+  }
+  footer.apple .footer-column .footer-column-section {
+    border-bottom: 1px solid #e3e3e3;
+  }
+  footer.apple .footer-column .footer-column-section h3 {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.8;
+  }
+  footer.apple .footer-column .footer-column-section h3:after {
+    content: '+';
+    float: right;
+    margin-right: 8px;
+    -webkit-transition: -webkit-transform .3s ease;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease;
+  }
 }
 
 @media (min-width: 769px) {

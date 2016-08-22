@@ -1,5 +1,7 @@
 $(function() {
 	
+	var width = document.documentElement.clientWidth;
+	
 	//dropdown menu
 	var menu = $('.left-menu');
 
@@ -66,7 +68,7 @@ $(function() {
 			searchButton.removeClass('hidden');
 			searchWrap.css('display', 'none');
 
-			if (width < 768) {
+			if (width < 769) {
 				menuButton.removeClass('hidden');
 				leftMenu.addClass('hidden');
 			} else {
@@ -93,7 +95,6 @@ $(function() {
 	});
 
 	searchHiddenToogle(document.documentElement.clientWidth);
-	var width = document.documentElement.clientWidth;
 	$(window).resize(function() {
 		width = document.documentElement.clientWidth;
 		searchHiddenToogle(width);
@@ -156,5 +157,33 @@ $(function() {
 		formEmail.val('');
 		formPassword.val('');
 	});
+
+	// footer menu
+	var footerMenuPunkt = $('footer .footer-column-section');
+
+	footerMenuPunkt.on('click', function() {
+		$(this).find('ul').slideToggle('fast');
+		//console.log($(this).find('h3:after'));
+		$(this).find('h3:after').css('transform', 'rotate(45deg)');
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });

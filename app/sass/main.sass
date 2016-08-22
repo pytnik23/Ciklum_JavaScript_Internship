@@ -311,14 +311,20 @@ footer.apple
 	.footer-column
 		float: left
 		width: 20%
-		
+		h3
+			margin:
+				top: 0
+				bottom: 0
+			font-size: 11px
+			line-height: 2em
 		ul
-			padding-left: 0
+			margin:
+				top: 0
+			padding:
+				left: 0
 			li
 				list-style-type: none
-				line-height: 1.8em
-				&:first-child
-					font-weight: bold
+				line-height: 2em
 				a
 					color: #666
 					&:hover, &:focus
@@ -327,12 +333,14 @@ footer.apple
 		color: #999
 	p
 		border-bottom: 1px solid #e3e3e3
-		margin-bottom: 6px
+		margin-bottom: 5px
 		padding-bottom: 5px
 	.inline-nav
 		display: inline-block
 		margin: 0
-		padding-left: 5px
+		padding:
+			top: 6px
+			left: 0px
 		li 
 			padding: 
 				left: 10px
@@ -341,6 +349,7 @@ footer.apple
 			display: inline-block
 			border-left: 1px solid #ccc
 			&:first-child
+				padding-left: 0
 				border: none
 			a
 				color: #666
@@ -350,6 +359,8 @@ footer.apple
 		padding: 
 			top: 20px
 			bottom: 24px
+		.copy
+			padding-right: 20px
 		a.us 
 			float: right
 			padding:
@@ -359,7 +370,6 @@ footer.apple
 			background:
 				image: url('../images/us.png')
 				repeat: no-repeat
-				//position: -10px
 			&:hover, &:focus
 					color: #333
 
