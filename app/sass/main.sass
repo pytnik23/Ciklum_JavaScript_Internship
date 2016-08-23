@@ -119,7 +119,8 @@ header
 					position: absolute
 					right: 20px
 					top: 18px
-			&:hover
+					transition: transform .3s ease
+			&:hover, &:focus
 				a
 					background-color: $secondary-hover-color
 
@@ -133,7 +134,7 @@ header
 			background-color: $secondary-hover-color
 			box-shadow: 1px 1px 3px -1px rgba(0,0,0,.1)
 			a 
-				&:hover
+				&:hover, &:focus
 					background-color: $thirdly-hover-color
 
 // dropbox section

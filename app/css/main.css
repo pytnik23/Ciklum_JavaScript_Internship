@@ -1244,9 +1244,13 @@ header .dropdown-menu li a i {
   position: absolute;
   right: 20px;
   top: 18px;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
-header .dropdown-menu li:hover a {
+header .dropdown-menu li:hover a, header .dropdown-menu li:focus a {
   background-color: #e5e5e5;
 }
 
@@ -1262,7 +1266,7 @@ header .dropdown-menu .second-dropdown-menu {
           box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.1);
 }
 
-header .dropdown-menu .second-dropdown-menu a:hover {
+header .dropdown-menu .second-dropdown-menu a:hover, header .dropdown-menu .second-dropdown-menu a:focus {
   background-color: #d9d9d9;
 }
 
