@@ -1,4 +1,4 @@
-# [Demo](https://pytnik23.github.io/Cilkum_JavaScript_Internship/)
+# [Demo](https://pytnik23.github.io/Ciklum_JavaScript_Internship/)
 
 # Project for Ciklum JavaScript Internship
 
