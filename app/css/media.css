@@ -1,13 +1,3 @@
-@media (max-width: 480px) {
-  .dropbox .hero-text-wrap {
-    margin: 0 auto;
-    text-align: center;
-  }
-  .oculus .col-4 {
-    width: 100% !important;
-  }
-}
-
 @media (max-width: 767px) {
   header .left-menu {
     position: absolute;
@@ -174,5 +164,15 @@
 @media (min-width: 1200px) {
   .dropbox .hero-text-wrap h1 {
     font-size: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropbox .hero-text-wrap {
+    width: auto;
+    text-align: center;
+  }
+  .oculus .col-4 {
+    width: 100% !important;
   }
 }

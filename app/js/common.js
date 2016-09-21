@@ -1,6 +1,6 @@
 $(function() {
 	
-	var width = document.documentElement.clientWidth;
+	window.width = document.documentElement.clientWidth;
 	
 	//dropdown menu
 	var menu = $('.left-menu');
@@ -21,7 +21,7 @@ $(function() {
 			if (width >= 768) {
 				$(dropdown).slideUp('fast');
 			}
-		})
+		});
 
 		$(dropdown).slideToggle('fast');
 	});
@@ -31,37 +31,32 @@ $(function() {
 		subMenu,
 		menuItems = $('.left-menu > li > ul > li');
 
-	if (width > 768) {
+	menuItems.hover(
+		function () {
+			if (width < 768) return;
+			console.log("hover");
+			dropdownMenu = $(this).closest('.dropdown-menu');
+		  	subMenu = $(this).find('.second-dropdown-menu');
+			
+			dropdownMenu.css('height', '');
+			subMenu.css('height', '');
 
-		menuItems.hover(
-			function () {
-				
-				dropdownMenu = $(this).closest('.dropdown-menu');
-			  	subMenu = $(this).find('.second-dropdown-menu');
-				
-				dropdownMenu.css('height', '');
-				subMenu.css('height', '');
+		  	var x = dropdownMenu.height(),
+				y = subMenu.height(),
+				menuHeight = Math.max(x, y);
 
-			  	var x = dropdownMenu.height(),
-					y = subMenu.height(),
-					menuHeight = Math.max(x, y);
+			if (!menuHeight) return;
 
-				if (!menuHeight) return;
+			dropdownMenu.height(menuHeight);
+			subMenu.height(menuHeight);
 
-				dropdownMenu.height(menuHeight);
-				subMenu.height(menuHeight);
-
-				$('ul', this).show();
-			},
-			function () {
-				$('ul', this).hide();
-			}
-		);
-	} else {
-		menuItems.hover(function(e) {
-			e.preventDefault();
-		});
-	}
+			$('ul', this).show();
+		},
+		function () {
+			if (width < 768) return;
+			$('ul', this).hide();
+		}
+	);
 
 	// hide & show
 	var searchButton = $('.search-button'),

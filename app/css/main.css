@@ -1099,7 +1099,7 @@ header .left-menu a, header .dropdown-menu li a {
 }
 
 html {
-  min-width: 400px;
+  min-width: 320px;
 }
 
 body {
@@ -1107,7 +1107,7 @@ body {
   background-color: #eee;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
-  min-width: 400px;
+  min-width: 320px;
 }
 
 header {
