@@ -34,7 +34,6 @@ $(function() {
 	menuItems.hover(
 		function () {
 			if (width < 768) return;
-			console.log("hover");
 			dropdownMenu = $(this).closest('.dropdown-menu');
 		  	subMenu = $(this).find('.second-dropdown-menu');
 			
