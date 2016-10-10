@@ -1,29 +1,30 @@
 $(function() {
 	
 	window.width = document.documentElement.clientWidth;
-	
+
 	//dropdown menu
-	var menu = $('.left-menu');
+	var mainMenuItems = $('.menu__item');
 
-	menu.on('click', function(e) {
-		var target = e.target;
+	// toogle .dropdown-menu and active class on .menu__item and 
+	mainMenuItems.on('click', function(e) {
+		if (!this.nextElementSibling) return;
 		e.preventDefault();
-		while (target !== this) {
-			if (target.tagName === 'A') {
-				break;
-			}
-			target = target.parentNode;
-		}
-		if (!target.nextElementSibling) return;
-		var dropdown = target.nextElementSibling;
-		
-		$(target).blur(function() {
-			if (width >= 768) {
-				$(dropdown).slideUp('fast');
-			}
-		});
 
-		$(dropdown).slideToggle('fast');
+		var __self = this,
+			dropdown = this.nextElementSibling;
+
+		if ( !$(this).hasClass('active') ) {
+			mainMenuItems.each(function(i, el) {
+				if (el !== __self) {
+					$(el).removeClass('active');
+					$(el.nextElementSibling).slideUp('fast');
+				}
+			});
+			$(__self).addClass('active');
+			$(dropdown).slideDown('fast');
+		} else {
+			$(dropdown).slideToggle('fast');
+		}
 	});
 	
 	//second dropdown menu hover & size
@@ -31,9 +32,8 @@ $(function() {
 		subMenu,
 		menuItems = $('.left-menu > li > ul > li');
 
-	menuItems.hover(
-		function () {
-			if (width < 768) return;
+	function showSecondDropdownMenu() {
+		if (width >= 768) {
 			dropdownMenu = $(this).closest('.dropdown-menu');
 		  	subMenu = $(this).find('.second-dropdown-menu');
 			
@@ -50,12 +50,24 @@ $(function() {
 			subMenu.height(menuHeight);
 
 			$('ul', this).show();
-		},
-		function () {
-			if (width < 768) return;
-			$('ul', this).hide();
 		}
+	}
+
+	function hideSecondDropdownMenu() {
+		if (width < 768) return;
+		$('ul', this).hide();
+	}
+
+	menuItems.hover(
+		showSecondDropdownMenu,
+		hideSecondDropdownMenu
 	);
+	menuItems.on('click', function(e) {
+		e.preventDefault();
+		if (width < 768) {
+			$('ul', this).slideToggle();
+		}
+	});
 
 	// hide & show
 	var searchButton = $('.search-button'),
@@ -179,4 +191,24 @@ $(function() {
 		h3.toggleClass('active');
 	});
 
+	// hide menu on document click
+	$(document).on('click', function(e) {
+		mainMenuItems.each(function(i, el) {
+			$(el).removeClass('active');
+			$(el.nextElementSibling).slideUp('fast');
+		});
+		if (width < 768) {
+			leftMenu.addClass('hidden');
+			menuButton.css('backgroundColor', '');
+			leftMenu.find('a.active').removeClass('active');
+			$('.second-dropdown-menu').hide();
+		}
+	});
+	menuButton.click(function(event){
+		event.stopPropagation();
+	});
+
+	leftMenu.click(function(event){
+		event.stopPropagation();
+	});
 });
