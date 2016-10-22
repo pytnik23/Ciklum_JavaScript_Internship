@@ -1,6 +1,6 @@
 $(function() {
 	
-	window.width = document.documentElement.clientWidth;
+	var width = document.documentElement.clientWidth;
 
 	//dropdown menu
 	var mainMenuItems = $('.menu__item');
@@ -125,6 +125,7 @@ $(function() {
 
 	menuButton.click(function(e) {
 		e.preventDefault();
+		e.stopPropagation();
 		if (leftMenu.hasClass('hidden')) {
 			leftMenu.removeClass('hidden');
 			menuButton.css('backgroundColor', '#f2f2f2');
@@ -185,10 +186,8 @@ $(function() {
 	var footerMenuPunkt = $('footer .footer-column-section');
 
 	footerMenuPunkt.on('click', function() {
-		var ul = $(this).find('ul'),
-			h3 = $(this).find('h3');
-		ul.slideToggle('fast');
-		h3.toggleClass('active');
+		$(this).find('ul').slideToggle('fast');
+		$(this).find('h3').toggleClass('active');
 	});
 
 	// hide menu on document click
@@ -203,9 +202,6 @@ $(function() {
 			leftMenu.find('a.active').removeClass('active');
 			$('.second-dropdown-menu').hide();
 		}
-	});
-	menuButton.click(function(event){
-		event.stopPropagation();
 	});
 
 	leftMenu.click(function(event){

@@ -1085,13 +1085,6 @@ header .left-menu a:hover, header .right-menu a:hover, header .left-menu a:focus
 header .left-menu a, header .dropdown-menu li a {
   -webkit-transition: background-color ease-out .5s;
   transition: background-color ease-out .5s;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  transition-property-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-delay: initial;
-          transition-delay: initial;
 }
 
 .hidden {
